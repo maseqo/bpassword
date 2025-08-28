@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            File password = new File("passwords.yml"); // you can use your own file name
+            File password = new File("passwords.yml"); // path to your file, example: C:\Users\YOURNAME\IdeaProjects\bpassword\src\main\resources\FILENAME.yml
             if (password.createNewFile()) {
                 System.out.println("password file created successfully");
             } else {
@@ -24,7 +24,7 @@ public class Main {
         String password = encoder.encode(RandomStringUtils.random(10, true, true)); // example, you can hash your own password
 
         try {
-            FileWriter fileWriter = new FileWriter("passwords.yml"); // you can use your own file name
+            FileWriter fileWriter = new FileWriter("passwords.yml"); // you can use your own file path or name
             fileWriter.append(password);
             fileWriter.close();
         } catch (IOException e) {
